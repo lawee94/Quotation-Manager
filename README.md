@@ -1,5 +1,17 @@
 firebase project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## QUOTATION MANAGER 
+
+This is a SPA built on React and Firebase. It is a simple business management software designed to 
+automatically generate materials quotation for businesses. Business owners can create new materials, View
+all the available materials, pick from the list of the materials and then generate a quotation from their 
+selection. The application automatically calculate the total price for the materials selected. The quotation 
+can then be printed as PDF... 
+The frontend is written with HTML and CSS while React was used to make the components reusable. 
+The authentication and other backend CRUD functionalities are handled by Google Firebase.
+
+The technology used are react, redux, bootstrap & Firebase
+
 ## Available Scripts
 
 In the project directory, you can run:
