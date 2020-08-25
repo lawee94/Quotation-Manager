@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./fonts/Roboto-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Segoe UI";
+  src: local("Segoe UI"), url(./fonts/SegoeUI.ttf) format("truetype");
+}
 .App {
   text-align: center;
 }
@@ -6,10 +14,10 @@
   color: #61dafb;
 }
 
-body{
+body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color:  #F6F6EF;
+  background-color: #f6f6ef;
+  font-family: "Segoe UI";
+  width: 100%;
 }
-
-

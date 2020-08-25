@@ -1,136 +1,204 @@
 .Content {
-    width: 80%;
-    margin: auto;
-    background-color: #F6F6EF;
-    text-align: center;
+  width: 100%;
+  margin: auto;
+  background-color: #f6f6ef;
+  text-align: center;
+  background: no-repeat url("../images/bg2.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
 
-main{
-    overflow-x: auto;
-    text-align: center;
+main {
+  overflow-x: auto;
+  text-align: center;
 }
-.bg-blue{
-    background-color: #1A5264;
+.bg-blue {
+  background-color: #1a5264;
+}
+.bg-lg {
+  background-color: #effdff;
+}
+.btn-blue {
+  background-color: rgb(12, 13, 68);
+  color: #fff;
 }
 .home {
-    background-image: url('./bg.jpg');
-    height: 100vh;
-    color: #ffff;
-    text-align: center;
-    margin-top: 0;
+  background: no-repeat url("../images/bg2.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  color: rgb(12, 13, 68);
+  text-align: center;
+  margin-top: 0;
+}
+.auth-container {
+  max-width: 700px;
+  height: auto;
+  margin: 40px auto;
+  padding: 40px 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 5px 0 1px 0px rgb(12, 0, 0);
+}
+.auth-container .row {
+  min-height: unset;
+}
+.input-container {
+  padding: 0 0 0 10px;
+  border-radius: 3px;
+  display: block;
+  margin: 15px auto;
+  border: 1px solid rgb(117, 112, 112);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.input-container input {
+  margin: 0 0 0 10px;
+  border-left: 1px solid rgb(117, 112, 112);
+  border-right: 0;
+  border-bottom: 0;
+  border-top: 0;
+  padding: 5px;
+  width: 100%;
+}
+.input-container input:focus {
+  outline: none;
 }
 .error {
-    background-color: #ffff;
-    width: 100%;
-    padding: 5px;
-    color: red;
-    margin: 10px 0;
+  background-color: #ffff;
+  width: 100%;
+  padding: 5px;
+  color: red;
+  margin: 10px 0;
 }
 .mybtn {
-    display: inline-block;
+  display: inline-block;
 }
 
-.contentBox{
-    text-align: center;
-    display: inline-block;
-    border: 3px solid #1A5264;
-    border-radius: 5px;
-    font-size: medium;
-    padding: 20px;
-    margin-top: 60px;
+.contentBox {
+  text-align: center;
+  display: inline-block;
+  border: 3px solid #1a5264;
+  border-radius: 5px;
+  font-size: medium;
+  padding: 20px;
+  margin-top: 60px;
 }
-
+.btn-green {
+  background-color: #1a5264;
+  color: #fff;
+}
+.btn-green:hover {
+  background-color: #0a83a1;
+}
 .Button {
-    background-color: #1A5264;
-    border-radius: 5px;
-    color: white;
-    outline: none;
-    cursor: pointer;
-    font: inherit;
-    padding: 10px;
-    margin: 10px;
-    font-weight: bold;
-    width: auto;
+  background-color: #1a5264;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  width: auto;
 }
 
 /* Navbar */
 .navbar-nav a {
-    color: #ffff;
-    text-decoration: none;
-    box-sizing: border-box;
-    display: block;
-    height: 100%;
-    padding: 16px 10px;
-    border-bottom: 4px solid transparent;
+  color: #ffff;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  padding: 16px 10px;
+  border-bottom: 4px solid transparent;
 }
 .nav-link a:hover,
 .nav-link a:active,
 .nav-link a.active {
-    background-color: #8F5C2C;
-    border-bottom: 4px solid #40A4C8;
-    color: white;
-    text-decoration: none;
+  background-color: #8f5c2c;
+  border-bottom: 4px solid #40a4c8;
+  color: white;
+  text-decoration: none;
+}
+.navbar-brand {
+  font-family: Roboto;
 }
 
 /* Modal */
 .Modal {
-    position: fixed;
-    z-index: 500;
-    background-color: white;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 16px;
-    left: 15%;
-    top: 30%;
-    box-sizing: border-box;
-    transition: all 0.3s ease-out;
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
 }
 
 /* Backdrop */
 .Backdrop {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Input */
-.Input {
-    padding: 10px 10px 10px 0;
-    box-sizing: border-box;
+/* Input  */
+.Inp input,
+.Inp select {
+  padding: 10px 10px 10px 0;
+  box-sizing: border-box;
+  outline: none;
+  padding: 6px 10px;
+  width: 250px;
+  border-radius: 3px;
+  margin: 10px;
+  background-color: #e8eff0;
+  border: 1px solid #ccc;
 }
 
-.InputElement {
-    outline: none;
-    padding: 6px 10px;
-    width: 250px;
-    box-sizing: border-box;
-    border-radius: 3px;
-    margin: 10px;
-}
-
-.InputElement:focus {
-    outline: none;
-    background-color: #ccc;
+.Inp input:focus,
+.Inp select:focus {
+  outline: none;
+  background-color: #ccc;
 }
 
 .Invalid {
-    border: 1px solid red;
-    background-color: #FDA49A;
+  border: 1px solid red;
+  background-color: #fda49a;
 }
 .inlineBlock {
-    display: inline-block;
+  display: inline-block;
 }
 .block {
-    display: block;
+  display: block;
 }
 
-.Qm{
-    font-size: 18;
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.Qm {
+  font-size: 18;
+}
+.w-300 {
+  width: 310px;
+  margin: auto;
+}
+.w-250 {
+  width: 250px;
+  margin: auto;
 }
 
 /* Spinner */
@@ -155,7 +223,7 @@ main{
 .Loader:before,
 .Loader:after {
   position: absolute;
-  content: '';
+  content: "";
 }
 .Loader:before {
   width: 5.2em;
@@ -202,44 +270,32 @@ main{
   }
 }
 
-
 @media (min-width: 600px) {
-    .Modal {
-        width: 500px;
-        left: calc(50% - 250px);
-    }
+  .Modal {
+    width: 500px;
+    left: calc(50% - 250px);
+  }
 }
 
-@media (max-width:900px){
-    .Content{
-        width: 100%;
-    }   
+@media (max-width: 900px) {
+  .Content {
+    width: 100%;
+  }
 }
 
-@media (max-width:609px){
-    .mybtn {
-        display: block;
-        width: 100%;
-    }
-    .contentBox{
-        border: none;
-        font-size: small;
-        margin-top: 60px;
-        padding: 0;
-    }
-    h4{
-        display: none
-    }
-    main{
-        overflow-x: auto;
-        text-align: center;
-    }
-    
+@media (max-width: 609px) {
+  .mybtn {
+    display: block;
+    width: 100%;
+  }
+  .contentBox {
+    border: none;
+    font-size: small;
+    margin-top: 60px;
+    padding: 0;
+  }
+  main {
+    overflow-x: auto;
+    text-align: center;
+  }
 }
-
-
-
-
-
-
-

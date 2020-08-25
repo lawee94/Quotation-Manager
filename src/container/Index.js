@@ -1,111 +1,53 @@
-import React, { Component } from 'react';
-import Toolbar from '../component/Toolbar/Toolbar';
-import Input from '../component/UI/Input';
-import Spinner from '../component/UI/Spinner';
-import { connect } from 'react-redux';
-import * as actions from '../store/actions/auth';
-import { Redirect } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import * as func from '../store/func';
+const Index = () => {
+  return (
+    <>
+      <div className="text-center home py-5">
+        <div className="flex w-300 mb-3">
+          <img height="30" src="/images/Logo.jpg" className="mr-2" alt="" />
+          <h3 className="inlineBlock">
+            <strong>FESTAC TECHNOLOGY</strong>
+          </h3>
+        </div>
 
-class Index extends Component {
-
-    state = {
-        inputElement: {
-            username: func.Input('input', 'text', 'Username', { required: true, minLength: 6, maxLength: 30, }),
-            password: func.Input('input', 'password', '********', { required: true, minLength: 6, maxLength: 20, })
-        },
-        loading: false,
-        error: null,
-        authUser: null
-    }
-
-    inputHandler = (event, id, myState) => {
-        const updatedState = func.inputHandler(event, id, myState)
-        this.setState({ inputElement: updatedState})
-    }
-
-    submitHandler = ( event ) => {
-        event.preventDefault();
-        this.props.onAuth( this.state.inputElement.username.value, this.state.inputElement.password.value );
-    }
-
-    render(){
-
-        let box = ( <form onSubmit={this.submitHandler} >
-            {func.getArrayFromState(this.state.inputElement).map( formElement => {
-                return <Input 
-                    key={formElement.id}
-                    elementType={formElement.config.elementType}  
-                    elementConfig={formElement.config.elementConfig}
-                    invalid={!formElement.config.valid}
-                    shouldValidate={formElement.config.validation}
-                    touched={formElement.config.touched}
-                    display='block' 
-                    changed={(event) => this.inputHandler(event, formElement.id, this.state.inputElement)}/> 
-                })}
-                <button className="btn btn-white m-3">Submit</button>
-        </form> )
-
-        if (this.props.loading) {
-            box = <Spinner />
-        }
-
-        let errorMessage = null;
-
-        if (this.props.error) {
-            errorMessage = (
-                <div className="error">
-                    <p>{this.props.error.message}</p>
-                </div>
-            );
-        }
-        let checkAuth;
-
-        if(this.props.isAuthenticated){
-            checkAuth = <Redirect to={this.props.authRedirectPath} />
-        }
-        
-        return(
-            <div className="home">
-                {checkAuth}
-                <Toolbar />
-                <div className="pt-5">
-                    <h2 className=" align-text-center mt-5">Quotation Manager</h2>
-                </div>
-                <div className="container-fluid">
-                    <div className="row text-center mt-5" style={{display: 'inline-block'}}>
-                        <div className="contentBox" style={{borderColor: 'white', marginTop: '20px'}}>
-                            {errorMessage}
-                            {box}
-                        </div>
-                    </div>
-                </div>
-                
+        <h3>
+          <strong>Quotation Manager</strong>
+        </h3>
+        <div className="auth-container p-0">
+          <div className="row">
+            <div className="p-5 col-sm-6 ">
+              <h4>
+                <strong>
+                  Try our quotation manager, for free by creating an account
+                </strong>
+              </h4>
+              <p>Create a brand-new account for you quotation.</p>
+              <Link to="/register" target="_blank">
+                <button className="btn btn-primary my-2">
+                  <strong>+ Create an Account</strong>
+                </button>
+              </Link>
             </div>
-        )
-    }
-}
-
-const mapStateToProps = state => {
-	return {
-	  isAuthenticated: state.auth.isAuthenticated,
-      isVerifying: state.auth.isVerifying,
-      loading: state.auth.loading,
-      error: state.auth.error,
-      isLoggingIn: state.auth.isLoggingIn,
-      authRedirectPath: state.auth.authRedirectPath
-	};
-  }
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onAuth: (email, password) => dispatch( actions.loginUser( email, password) )
-    };
+            <div className="bg-lg p-5 col-sm-6 ">
+              <h4>
+                <strong>
+                  Did you already have a quotation manager account?
+                </strong>
+              </h4>
+              <p>Find or signin to your quotation account.</p>
+              <Link to="/login" target="_blank">
+                <button className="btn btn-primary my-2">
+                  <strong>Sign in --></strong>
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Index);
-
-
-
- 
+export default Index;

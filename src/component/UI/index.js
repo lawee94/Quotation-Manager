@@ -1,20 +1,11 @@
 import React from "react";
 
-const input = (props) => {
+const Input = (props) => {
   let inputElement = null;
-
-  let inputClasses = "inlineBlock InputElement";
-  let inputClas = "Input";
+  let inputClasses = "";
 
   if (props.invalid && props.shouldValidate && props.touched) {
-    inputClasses = "inlineBlock InputElement Invalid";
-  }
-
-  if (props.display === "block") {
-    inputClas = "Input block";
-  }
-  if (props.display === "inline-block") {
-    inputClas = "Input inlineBlock";
+    inputClasses = "Invalid";
   }
 
   switch (props.elementType) {
@@ -23,7 +14,6 @@ const input = (props) => {
         <input
           className={inputClasses}
           {...props.elementConfig}
-          width="250px"
           value={props.value}
           onChange={props.changed}
         />
@@ -46,7 +36,7 @@ const input = (props) => {
           value={props.value}
           onChange={props.changed}
         >
-          {props.options.map((option) => (
+          {props.elementConfig.options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.displayValue}
             </option>
@@ -65,7 +55,7 @@ const input = (props) => {
       );
   }
 
-  return <div className={inputClas}>{inputElement}</div>;
+  return <div>{inputElement}</div>;
 };
 
-export default input;
+export default Input;
